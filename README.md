@@ -1,1 +1,1 @@
-# onsite-jump-prep
+### after my first technical interview and getting caught up with the feedback given from my interviewer, i am now applying those criticism and bettering myself!
