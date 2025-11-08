@@ -4,6 +4,8 @@ interface Task {
   completed: boolean;
 }
 
+//test commit
+
 export class TaskManager {
   private _tasks: Task[];
   constructor(_tasks: Task[]) {
