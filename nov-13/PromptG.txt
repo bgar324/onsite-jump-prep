@@ -1,0 +1,44 @@
+Prompt G — Designing a Mini Notification System
+
+Engineer asks:
+“Build the backend + class model for a notification panel that stores notifications, marks them read/unread, and streams new ones to the UI.”
+
+You outline:
+
+A Notification class
+
+A NotificationManager service
+
+A WebSocket push method
+
+API routes
+
+A React component (high-level)
+
+Checkpoints:
+
+How would you paginate?
+
+How would you handle concurrent writes?
+
+How do you model read/unread state for many users?
+
+----
+
+Notification class would have a constructor of:
+id of a number -> uuid
+notification of type text 
+isRead of type bool, and initialized to false on default
+
+a notificationmanager class would take nothing for a constructor but also have an internal hashmap where id maps to each notifiation object
+could be the id attached to the notifiaciton object
+
+basically, fast lookup is all we want here.
+
+then, setting up the notifiaciton manager. we can use the web socket send function to send data from the frontend to the backend since its bidirectional
+
+um, if we're sending data frmo the back to the frontend we can use a middleware to normalize the data send via a function and or normalize into a json for the react component
+
+which, appends or rather hashes to the hash map, and we detect changes via things like the spread operator in a sense or like, append or yea
+
+okay, so we use the send to create a randomized message and uuid and pack it to a notificaiton object, append that to the notifiaciton manager

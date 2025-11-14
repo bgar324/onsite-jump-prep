@@ -1,0 +1,27 @@
+Prompt H — Real-Time Leaderboard
+
+Build the class model for:
+
+A Leaderboard that tracks scores
+
+Updates happen 1000/sec
+
+50 UI clients subscribe
+
+Must propagate updates without stalling
+
+You explain:
+
+The data structure (heap? sorted list? map?)
+
+A WebSocket broadcasting loop
+
+Why you should decouple update ingestion from broadcast
+
+How to avoid blocking
+
+What race conditions can appear
+
+----
+
+

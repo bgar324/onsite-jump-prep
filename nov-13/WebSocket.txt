@@ -1,0 +1,27 @@
+Prompt F — WebSocket broadcast (no framework)
+
+Define the internal logic for:
+
+A list of connected clients
+
+A function broadcast(message) that sends to all
+
+How this avoids spawning separate loops per client
+
+What happens if a client hangs
+
+How to avoid the entire system stalling
+
+Don’t code the full WebSocket server, just sketch the design and narrate.
+
+----
+
+clients connect to backend
+backend has a websocket server for all clients
+via websocket, broadcasts to all
+
+clients all operate on one backend, and one websocket
+
+if a client hangs, thats fine. since the websocket doesnt depend on the client, the client will just receive the next packet
+
+to prevent the entire system stalling u could use redis or caching to show stale data, better than no data, or just an error message.
