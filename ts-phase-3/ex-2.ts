@@ -32,9 +32,7 @@ const bookCollection = new Collections<Book>([
   { id: 2, title: "Brave New World" },
 ]);
 
-const movieCollection = new Collections<Movie>([
-  { id: 10, title: "Inception", rating: 9.0 },
-]);
+const movieCollection = new Collections<Movie>([{ id: 10, title: "Inception", rating: 9.0 }]);
 
 bookCollection.add({ id: 3, title: "Fahrenheit 451" });
 

@@ -14,7 +14,6 @@ class Employee{
   describe() : any{
     return `${this.name} is a ${this.role}`
   }
-
 }
 
 class FullTimeEmployee extends Employee implements Payable{

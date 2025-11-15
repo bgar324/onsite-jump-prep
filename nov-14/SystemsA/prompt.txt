@@ -1,0 +1,47 @@
+System Option A — Real-Time Price Ticker (recommended)
+
+Backend (Python):
+
+A price generator coroutine
+
+A WebSocket server that broadcasts prices
+
+A simple /snapshot REST endpoint returning the latest price
+
+Frontend (React/TS):
+
+A useEffect WebSocket subscription
+
+A small UI tile showing:
+
+current price
+
+last updated
+
+price color (green if rising, red if falling)
+
+You must make these decisions and narrate them:
+
+How to decouple feed → broadcaster
+
+How to handle subscriber join/leave
+
+What happens if backend sends messages too rapidly
+
+Whether UI stores local history or requests it
+
+This maps exactly to Jump’s real-time UI work.
+
+<thoughts>
+price_generator -> asyncio.Queue -> websocket broadcaster
+for subscribers:
+  maintain a set of websockets.
+  on connect(): add a websocket to the set
+  on disconnect(): remove the websocket from the set
+
+if the queue grows and has too many ticks:
+  choose lastest only.
+
+lets use local history
+</thoughts>
+
